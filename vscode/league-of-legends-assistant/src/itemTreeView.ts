@@ -19,12 +19,6 @@ interface Item {
     keywords: string;
 }
 
-function extractRarityLegendary(text: string): string | null {
-    const regex = /<rarityLegendary>(.*?)<\/rarityLegendary>/;
-    const match = text.match(regex);
-    return match ? match[1] : null;
-}
-
 class ItemProvider implements vscode.TreeDataProvider<Item> {
     private _onDidChangeTreeData = new vscode.EventEmitter<Item | undefined>();
     readonly onDidChangeTreeData = this._onDidChangeTreeData.event;
@@ -40,7 +34,8 @@ class ItemProvider implements vscode.TreeDataProvider<Item> {
             const response = await axios.get('https://game.gtimg.cn/images/lol/act/img/js/items/items.js?ts=2794915');
             const data = response.data;
             if (data && data.items) {
-                this.items = data.items;
+                // 过滤掉 price 为 0 的数据
+                this.items = data.items.filter((item: Item) => item.price !== "0");
                 this._onDidChangeTreeData.fire(undefined);
             }
         } catch (error) {
@@ -56,11 +51,7 @@ class ItemProvider implements vscode.TreeDataProvider<Item> {
     }
 
     getTreeItem(element: Item): vscode.TreeItem {
-        // 装备名称接口返回的有可能带 Html 标签，所以在显示时做一下处理
-        const rarityLegendaryText = extractRarityLegendary(element.name);
-        const displayName = rarityLegendaryText || element.name;
-
-        const treeItem = new vscode.TreeItem(`${displayName}`);
+        const treeItem = new vscode.TreeItem(`${element.name}`);
         treeItem.id = element.itemId;
         treeItem.contextValue = 'item';
         treeItem.iconPath = vscode.Uri.parse(element.iconPath);
@@ -79,12 +70,9 @@ export function registerItemTreeView(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(
         vscode.commands.registerCommand('showItemDetails', (item: Item) => {
-            // 装备名称接口返回的有可能带 Html 标签，所以在显示时做一下处理
-            const itemTitle = extractRarityLegendary(item.name) || item.name;
-
             const panel = vscode.window.createWebviewPanel(
                 'itemDetails',
-                `装备 - ${itemTitle}`,
+                `装备 - ${item.name}`,
                 vscode.ViewColumn.One,
                 {}
             );
@@ -103,6 +91,7 @@ export function registerItemTreeView(context: vscode.ExtensionContext) {
             <h1>${item.name}</h1>
             <img src="${item.iconPath}" alt="${item.name}" width="64" height="64">
             <p>${item.description}</p>
+            <p>价格: ${item.price}</p>
             </body>
 
             </html>
