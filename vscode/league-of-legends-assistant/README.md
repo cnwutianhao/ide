@@ -1,21 +1,21 @@
-# 英雄联盟助手
+<div align="center">
+<img src="https://github.com/cnwutianhao/ide/assets/13990136/b97088db-a08d-4008-8f32-86415dab32b2" alt="英雄联盟助手" width="128"/>
 
-### 使用
-1. 导入插件到 VS Code
-   <br/><img src="https://github.com/cnwutianhao/ide/assets/13990136/4c8da4ff-a09b-41c5-9252-d08b471e935c" alt="英雄联盟助手截图1" width="600">
+# League of Legends Assistant（英雄联盟助手）
 
-2. 查看 “英雄”
-   <br/><img src="https://github.com/cnwutianhao/ide/assets/13990136/063ab12b-07a1-4d2f-ae3d-da843a167f68" alt="英雄联盟助手截图2" width="600">
+英雄联盟助手 - 在 VS Code 上查看英雄、装备等信息
 
-4. 查看 “装备”
-   <br/><img src="https://github.com/cnwutianhao/ide/assets/13990136/5b43cb04-c5e3-4446-b6d9-abad7ad8c913" alt="英雄联盟助手截图3" width="600">
+[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/TyhooWu.league-of-legends-assistant.svg?label=Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.league-of-legends-assistant)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/TyhooWu.league-of-legends-assistant?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.league-of-legends-assistant)
+[![Rating](https://img.shields.io/visual-studio-marketplace/stars/TyhooWu.league-of-legends-assistant.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.league-of-legends-assistant)
 
-6. 下载体验
-   > https://github.com/cnwutianhao/ide/releases/tag/vscode
+</div>
 
----
+## 安装使用
 
-### 更新日志
+安装插件：[VisualStudio - Marketplace](https://marketplace.visualstudio.com/items?itemName=TyhooWu.league-of-legends-assistant)，VS Code 最低版本要求：`^1.80.0`
+
+## 更新日志
 
 + [2023.07.27] v1.0.1
   ```
@@ -31,9 +31,7 @@
   5. 装备详情：装备名、装备图、装备介绍、装备价格
   ```
 
----
-
-### License
+## License
 
 ```
 MIT License
