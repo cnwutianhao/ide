@@ -39,6 +39,7 @@ class ItemProvider implements vscode.TreeDataProvider<Item> {
                 this._onDidChangeTreeData.fire(undefined);
             }
         } catch (error) {
+            vscode.window.showErrorMessage('装备数据加载失败，请稍后再试。');
             console.error(error);
         }
     }

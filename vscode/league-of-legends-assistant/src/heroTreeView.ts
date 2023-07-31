@@ -36,6 +36,7 @@ class HeroProvider implements vscode.TreeDataProvider<Hero> {
                 this._onDidChangeTreeData.fire(undefined);
             }
         } catch (error) {
+            vscode.window.showErrorMessage('英雄数据加载失败，请稍后再试。');
             console.error(error);
         }
     }
@@ -138,21 +139,21 @@ export function registerHeroTreeView(context: vscode.ExtensionContext) {
                     <img src="${spell.abilityIconPath}" alt="${spell.name} Icon" style="max-width: 100px;">
                     <p>${spell.description}</p>
                     `;
-                    }).join('')}
+                }).join('')}
                     <hr>
 
                     <h3>皮肤</h3>
                     ${skinDetails.map((skin: any) => {
                     // 检查 "chromasBelongId" 是否为 "0"，如果是则显示该皮肤图像
                     if (skin.chromasBelongId === "0") {
-                    return `
+                        return `
                     <h4>${skin.name}</h4>
                     <img src="${skin.mainImg}" alt="${skin.name} Skin" style="max-width: 300px;">
                     `;
                     }
                     // 如果不满足条件，则返回空字符串，不显示该皮肤图像
                     return '';
-                    }).join('')}
+                }).join('')}
                     <hr>
                 </body>
                 
