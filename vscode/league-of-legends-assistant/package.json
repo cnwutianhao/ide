@@ -32,6 +32,10 @@
         {
           "id": "lol_asst_items",
           "name": "装备"
+        },
+        {
+          "id": "lol_asst_runes",
+          "name": "符文"
         }
       ]
     }
