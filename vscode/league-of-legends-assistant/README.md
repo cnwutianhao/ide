@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/cnwutianhao/ide/assets/13990136/b97088db-a08d-4008-8f32-86415dab32b2" alt="英雄联盟助手" width="128"/>
+<img src="https://github.com/cnwutianhao/ide/assets/13990136/05bfd2a2-e76f-4e8f-8a5b-11bfcea354b4" alt="英雄联盟助手" width="128"/>
 
 # League of Legends Assistant（英雄联盟助手）
 
@@ -16,6 +16,12 @@
 安装插件：[VisualStudio - Marketplace](https://marketplace.visualstudio.com/items?itemName=TyhooWu.league-of-legends-assistant)，VS Code 最低版本要求：`^1.80.0`
 
 ## 更新日志
+
++ [2023.08.02] v1.0.3
+  ```
+  1. 更换图标
+  2. 多个插件之间命令冲突的问题解决
+  ```
 
 + [2023.07.31] v1.0.2
   ```
