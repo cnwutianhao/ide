@@ -49,8 +49,8 @@ class RuneProvider implements vscode.TreeDataProvider<Rune> {
         treeItem.contextValue = 'rune';
         treeItem.iconPath = vscode.Uri.parse(`https://game.gtimg.cn/images/yxzj/img201606/mingwen/${element.ming_id}.png`);
         treeItem.command = {
-            title: 'Show Rune Details',
-            command: 'showRuneDetails',
+            title: 'Show HOK Rune Details',
+            command: 'showHokRuneDetails',
             arguments: [element],
         };
         return treeItem;
@@ -62,7 +62,7 @@ export function registerRuneTreeView(context: vscode.ExtensionContext) {
     vscode.window.registerTreeDataProvider('hok_asst_runes', runeProvider);
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('showRuneDetails', (rune: Rune) => {
+        vscode.commands.registerCommand('showHokRuneDetails', (rune: Rune) => {
             const panel = vscode.window.createWebviewPanel(
                 'runeDetails',
                 `铭文 - ${rune.ming_name}`,

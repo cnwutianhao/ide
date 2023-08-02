@@ -51,8 +51,8 @@ class ItemProvider implements vscode.TreeDataProvider<Item> {
         treeItem.contextValue = 'item';
         treeItem.iconPath = vscode.Uri.parse(`https://game.gtimg.cn/images/yxzj/img201606/itemimg/${element.item_id}.jpg`);
         treeItem.command = {
-            title: 'Show Item Details',
-            command: 'showItemDetails',
+            title: 'Show HOK Item Details',
+            command: 'showHokItemDetails',
             arguments: [element],
         };
         return treeItem;
@@ -64,7 +64,7 @@ export function registerItemTreeView(context: vscode.ExtensionContext) {
     vscode.window.registerTreeDataProvider('hok_asst_items', itemProvider);
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('showItemDetails', (item: Item) => {
+        vscode.commands.registerCommand('showHokItemDetails', (item: Item) => {
             const panel = vscode.window.createWebviewPanel(
                 'itemDetails',
                 `装备 - ${item.item_name}`,
