@@ -46,8 +46,8 @@ class HeroProvider {
         treeItem.contextValue = 'hero';
         treeItem.iconPath = vscode.Uri.parse(element.iconUrl);
         treeItem.command = {
-            title: 'Show Hero Details',
-            command: 'showHeroDetails',
+            title: 'Show LOL Hero Details',
+            command: 'showLolHeroDetails',
             arguments: [element],
         };
         return treeItem;
@@ -56,7 +56,7 @@ class HeroProvider {
 function registerHeroTreeView(context) {
     const heroProvider = new HeroProvider();
     vscode.window.registerTreeDataProvider('lol_asst_heroes', heroProvider);
-    context.subscriptions.push(vscode.commands.registerCommand('showHeroDetails', async (hero) => {
+    context.subscriptions.push(vscode.commands.registerCommand('showLolHeroDetails', async (hero) => {
         try {
             const response = await axios_1.default.get(`https://game.gtimg.cn/images/lol/act/img/js/hero/${hero.heroId}.js?ts=2794916`);
             const data = response.data;
@@ -7963,8 +7963,8 @@ class ItemProvider {
         treeItem.contextValue = 'item';
         treeItem.iconPath = vscode.Uri.parse(element.iconPath);
         treeItem.command = {
-            title: 'Show Item Details',
-            command: 'showItemDetails',
+            title: 'Show LOL Item Details',
+            command: 'showLolItemDetails',
             arguments: [element],
         };
         return treeItem;
@@ -7973,7 +7973,7 @@ class ItemProvider {
 function registerItemTreeView(context) {
     const itemProvider = new ItemProvider();
     vscode.window.registerTreeDataProvider('lol_asst_items', itemProvider);
-    context.subscriptions.push(vscode.commands.registerCommand('showItemDetails', (item) => {
+    context.subscriptions.push(vscode.commands.registerCommand('showLolItemDetails', (item) => {
         const panel = vscode.window.createWebviewPanel('itemDetails', `装备 - ${item.name}`, vscode.ViewColumn.One, {});
         panel.webview.html = `
             <!DOCTYPE html>
@@ -8042,8 +8042,8 @@ class RuneProvider {
         treeItem.contextValue = 'rune';
         treeItem.iconPath = vscode.Uri.parse(element.icon);
         treeItem.command = {
-            title: 'Show Rune Details',
-            command: 'showRuneDetails',
+            title: 'Show LOL Rune Details',
+            command: 'showLolRuneDetails',
             arguments: [element],
         };
         return treeItem;
@@ -8052,7 +8052,7 @@ class RuneProvider {
 function registerRuneTreeView(context) {
     const runeProvider = new RuneProvider();
     vscode.window.registerTreeDataProvider('lol_asst_runes', runeProvider);
-    context.subscriptions.push(vscode.commands.registerCommand('showRuneDetails', (rune) => {
+    context.subscriptions.push(vscode.commands.registerCommand('showLolRuneDetails', (rune) => {
         const panel = vscode.window.createWebviewPanel('runeDetails', `符文 - ${rune.name}`, vscode.ViewColumn.One, {});
         panel.webview.html = `
             <!DOCTYPE html>

@@ -57,8 +57,8 @@ class ItemProvider implements vscode.TreeDataProvider<Item> {
         treeItem.contextValue = 'item';
         treeItem.iconPath = vscode.Uri.parse(element.iconPath);
         treeItem.command = {
-            title: 'Show Item Details',
-            command: 'showItemDetails',
+            title: 'Show LOL Item Details',
+            command: 'showLolItemDetails',
             arguments: [element],
         };
         return treeItem;
@@ -70,7 +70,7 @@ export function registerItemTreeView(context: vscode.ExtensionContext) {
     vscode.window.registerTreeDataProvider('lol_asst_items', itemProvider);
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('showItemDetails', (item: Item) => {
+        vscode.commands.registerCommand('showLolItemDetails', (item: Item) => {
             const panel = vscode.window.createWebviewPanel(
                 'itemDetails',
                 `装备 - ${item.name}`,

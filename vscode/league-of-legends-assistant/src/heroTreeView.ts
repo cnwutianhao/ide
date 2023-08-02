@@ -54,8 +54,8 @@ class HeroProvider implements vscode.TreeDataProvider<Hero> {
         treeItem.contextValue = 'hero';
         treeItem.iconPath = vscode.Uri.parse(element.iconUrl);
         treeItem.command = {
-            title: 'Show Hero Details',
-            command: 'showHeroDetails',
+            title: 'Show LOL Hero Details',
+            command: 'showLolHeroDetails',
             arguments: [element],
         };
         return treeItem;
@@ -67,7 +67,7 @@ export function registerHeroTreeView(context: vscode.ExtensionContext) {
     vscode.window.registerTreeDataProvider('lol_asst_heroes', heroProvider);
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('showHeroDetails', async (hero: Hero) => {
+        vscode.commands.registerCommand('showLolHeroDetails', async (hero: Hero) => {
             try {
                 const response = await axios.get(`https://game.gtimg.cn/images/lol/act/img/js/hero/${hero.heroId}.js?ts=2794916`);
                 const data = response.data;
