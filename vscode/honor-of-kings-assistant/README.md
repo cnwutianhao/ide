@@ -5,11 +5,15 @@
 
 王者荣耀助手 - 在 VS Code 上查看英雄、装备、铭文等信息
 
+[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/TyhooWu.honor-of-kings-assistant.svg?label=Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.honor-of-kings-assistant)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/TyhooWu.honor-of-kings-assistant?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.honor-of-kings-assistant)
+[![Rating](https://img.shields.io/visual-studio-marketplace/stars/TyhooWu.honor-of-kings-assistant.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.honor-of-kings-assistant)
+
 </div>
 
 ## 安装使用
 
-VS Code 最低版本要求：`^1.80.0`
+安装插件：[VisualStudio - Marketplace](https://marketplace.visualstudio.com/items?itemName=TyhooWu.honor-of-kings-assistant)，VS Code 最低版本要求：`^1.80.0`
 
 ## 更新日志
 
