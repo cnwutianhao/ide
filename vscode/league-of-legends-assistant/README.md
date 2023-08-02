@@ -3,7 +3,7 @@
 
 # League of Legends Assistant（英雄联盟助手）
 
-英雄联盟助手 - 在 VS Code 上查看英雄、装备等信息
+英雄联盟助手 - 在 VS Code 上查看英雄、装备、符文等信息
 
 [![Marketplace](https://img.shields.io/visual-studio-marketplace/v/TyhooWu.league-of-legends-assistant.svg?label=Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.league-of-legends-assistant)
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/TyhooWu.league-of-legends-assistant?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.league-of-legends-assistant)
