@@ -1,9 +1,30 @@
 # Change Log
 
-All notable changes to the "honor-of-kings-assistant" extension will be documented in this file.
+All notable changes to this project will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.2] - 2023-08-02
 
-- Initial release
+### Fixed
+
+- 多个插件之间命令冲突的问题解决
+
+## [1.0.1] - 2023-08-02
+
+### Changed
+
+- 更换图标
+
+## [1.0.0] - 2023-08-02
+
+### Added
+
+- 初版发布
+- 英雄列表（头像、名称）
+- 英雄详情（名称、昵称、背景图、技能介绍、技能加点、出装、对线技巧、英雄关系、克制关系）
+- 装备列表（图片、名称）
+- 装备详情（名称、图片、介绍、价格）
+- 铭文列表（图片、名称）
+- 铭文详情（名称、图片、介绍）
