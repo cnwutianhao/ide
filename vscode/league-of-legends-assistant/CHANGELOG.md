@@ -1,9 +1,39 @@
 # Change Log
 
-All notable changes to the "league-of-legends-assistant" extension will be documented in this file.
+All notable changes to this project will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.3] - 2023-08-02
 
-- Initial release
+### Fixed
+
+- 多个插件之间命令冲突的问题解决
+
+### Changed
+
+- 更换图标
+
+## [1.0.2] - 2023-07-31
+
+### Added
+
+- 符文列表（名称、图片）
+- 符文详情（名称、图片、介绍）
+
+## [1.0.1] - 2023-07-27
+
+### Added
+
+- 英雄详情页内容丰富（基本信息、技能介绍、皮肤展示）
+
+## [1.0.0] - 2023-07-26
+
+### Added
+
+- 初版发布
+- 英雄列表（头像、名称、昵称）
+- 装备列表（图片、名称）
+- 英雄详情（名称、昵称、背景图、介绍）
+- 装备详情（名称、图片、介绍、价格）
