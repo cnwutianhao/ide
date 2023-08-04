@@ -3,6 +3,8 @@
   "displayName": "刀塔2助手",
   "description": "探索刀塔2世界，尽在刀塔2助手。",
   "version": "1.0.0",
+  "publisher": "TyhooWu",
+  "icon": "icons/logo.png",
   "engines": {
     "vscode": "^1.80.0"
   },
