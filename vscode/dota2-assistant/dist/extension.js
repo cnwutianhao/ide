@@ -58,6 +58,7 @@ function registerHeroTreeView(context) {
             const response = await axios_1.default.get(`https://www.dota2.com/datafeed/herodata?language=schinese&hero_id=${hero.id}`);
             const heroData = response.data.result.data.heroes[0];
             const panel = vscode.window.createWebviewPanel('heroDetails', `英雄 - ${hero.name_loc}`, vscode.ViewColumn.One, {});
+            const heroAbilities = heroData.abilities;
             const htmlContent = `
                 <!DOCTYPE html>
                 <html>
@@ -70,10 +71,23 @@ function registerHeroTreeView(context) {
                 
                 <body>
                   <h1>${heroData.name_loc}</h1>
-                  <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${heroData.name.replace('npc_dota_hero_', '')}.png">
+                  <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${heroData.name.replace('npc_dota_hero_', '')}.png" style="max-width: 500px;">
+                
+                  <h2>背景</h2>
                   <p>${heroData.bio_loc}</p>
                   <p>${heroData.hype_loc}</p>
                   <p>${heroData.npe_desc_loc}</p>
+                
+                  <h2>技能</h2>
+                  <ul>
+                    ${heroAbilities.map((ability) => `
+                    <li>
+                      <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/${ability.name}.png" style="max-width: 80px;">
+                      <h3>${ability.name_loc}</h3>
+                      <p>${ability.desc_loc}</p>
+                    </li>
+                    `).join('')}
+                  </ul>
                 </body>
                 
                 </html>
@@ -7918,7 +7932,8 @@ function registerItemTreeView(context) {
             const response = await axios_1.default.get(`https://www.dota2.com/datafeed/itemdata?language=schinese&item_id=${item.id}`);
             const itemData = response.data.result.data.items[0];
             const panel = vscode.window.createWebviewPanel('itemDetails', `物品 - ${item.name_loc}`, vscode.ViewColumn.One, {});
-            const replacedDesc = itemData.desc_loc.replace(/%(\w+)%/g, (match, paramName) => {
+            const descLoc = itemData.desc_loc.replace('h1', 'h4');
+            const replacedDesc = descLoc.replace(/%(\w+)%/g, (match, paramName) => {
                 const specialValue = itemData.special_values.find((value) => value.name.toLowerCase() === paramName.toLowerCase());
                 return specialValue ? specialValue.values_float[0].toString() : match;
             });
@@ -7942,9 +7957,10 @@ function registerItemTreeView(context) {
                 <body>
                   <h1>${itemData.name_loc}</h1>
                   <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/${iconName}.png">
-                  <p>${itemData.lore_loc}</p>
                   <p>${replacedDesc}</p>
                   <p>${itemData.notes_loc.join('<br>')}</p>
+                  <p>${itemData.lore_loc}</p>
+                  <p>价格：${itemData.item_cost}</p>
                 </body>
 
                 </html>
