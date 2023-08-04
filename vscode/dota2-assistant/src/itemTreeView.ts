@@ -79,7 +79,8 @@ export function registerItemTreeView(context: vscode.ExtensionContext) {
                     {}
                 );
 
-                const replacedDesc = itemData.desc_loc.replace(/%(\w+)%/g, (match: string, paramName: string) => {
+                const descLoc = itemData.desc_loc.replace('h1', 'h4');
+                const replacedDesc = descLoc.replace(/%(\w+)%/g, (match: string, paramName: string) => {
                     const specialValue = itemData.special_values.find((value: { name: string, values_float: number[] }) => value.name.toLowerCase() === paramName.toLowerCase());
                     return specialValue ? specialValue.values_float[0].toString() : match;
                 });
@@ -104,9 +105,10 @@ export function registerItemTreeView(context: vscode.ExtensionContext) {
                 <body>
                   <h1>${itemData.name_loc}</h1>
                   <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/${iconName}.png">
-                  <p>${itemData.lore_loc}</p>
                   <p>${replacedDesc}</p>
                   <p>${itemData.notes_loc.join('<br>')}</p>
+                  <p>${itemData.lore_loc}</p>
+                  <p>价格：${itemData.item_cost}</p>
                 </body>
 
                 </html>
