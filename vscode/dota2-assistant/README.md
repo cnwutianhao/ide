@@ -5,11 +5,15 @@
 
 刀塔2助手 - 在 VS Code 上查看英雄、物品等信息
 
+[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/TyhooWu.dota2-assistant.svg?label=Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.dota2-assistant)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/TyhooWu.dota2-assistant?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.dota2-assistant)
+[![Rating](https://img.shields.io/visual-studio-marketplace/stars/TyhooWu.dota2-assistant.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.dota2-assistant)
+
 </div>
 
 ## 安装使用
 
-VS Code 最低版本要求：`^1.80.0`
+安装插件：[VisualStudio - Marketplace](https://marketplace.visualstudio.com/items?itemName=TyhooWu.dota2-assistant)，VS Code 最低版本要求：`^1.80.0`
 
 ## License
 
