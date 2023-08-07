@@ -55,6 +55,10 @@ class RuneProvider implements vscode.TreeDataProvider<Rune> {
         };
         return treeItem;
     }
+
+    dispose() {
+        this._onDidChangeTreeData.dispose();
+    }
 }
 
 export function registerRuneTreeView(context: vscode.ExtensionContext) {
@@ -69,6 +73,12 @@ export function registerRuneTreeView(context: vscode.ExtensionContext) {
                 vscode.ViewColumn.One,
                 {}
             );
+
+            // 注册 Webview 面板关闭事件，释放资源
+            panel.onDidDispose(() => {
+                // 在面板关闭时执行资源释放操作
+                runeProvider.dispose();
+            });
 
             panel.webview.html = `
             <!DOCTYPE html>

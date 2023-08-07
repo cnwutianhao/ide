@@ -60,6 +60,10 @@ class HeroProvider implements vscode.TreeDataProvider<Hero> {
         };
         return treeItem;
     }
+
+    dispose() {
+        this._onDidChangeTreeData.dispose();
+    }
 }
 
 export function registerHeroTreeView(context: vscode.ExtensionContext) {
@@ -139,7 +143,7 @@ export function registerHeroTreeView(context: vscode.ExtensionContext) {
                     <img src="${spell.abilityIconPath}" alt="${spell.name} Icon" style="max-width: 100px;">
                     <p>${spell.description}</p>
                     `;
-                }).join('')}
+                    }).join('')}
                     <hr>
 
                     <h3>皮肤</h3>
@@ -153,16 +157,23 @@ export function registerHeroTreeView(context: vscode.ExtensionContext) {
                     }
                     // 如果不满足条件，则返回空字符串，不显示该皮肤图像
                     return '';
-                }).join('')}
+                    }).join('')}
                     <hr>
                 </body>
                 
                 </html>
                 `;
 
-                // Set the HTML content of the webview panel
+                // 注册 Webview 面板关闭事件，释放资源
+                panel.onDidDispose(() => {
+                    // 在面板关闭时执行资源释放操作
+                    heroProvider.dispose();
+                });
+
+                // 设置 Webview 面板的 HTML 内容
                 panel.webview.html = htmlContent;
             } catch (error) {
+                vscode.window.showErrorMessage('无法加载英雄详细信息，请稍后再试。');
                 console.error(error);
             }
         })
