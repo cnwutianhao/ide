@@ -15,6 +15,24 @@ interface Ability {
     name: string;
     name_loc: string;
     desc_loc: string;
+    special_values: SpecialValue[];
+}
+
+interface SpecialValue {
+    name: string;
+    values_float: number[];
+}
+
+function replaceSpecialValues(description: string, specialValues: SpecialValue[]): string {
+    let replacedDescription = description;
+
+    specialValues.forEach((specialValue) => {
+        const placeholder = `%${specialValue.name}%`.toLowerCase();
+        const value = specialValue.values_float[0];
+        replacedDescription = replacedDescription.replace(placeholder, value.toString());
+    });
+
+    return replacedDescription;
 }
 
 class HeroProvider implements vscode.TreeDataProvider<Hero> {
@@ -93,7 +111,9 @@ export function registerHeroTreeView(context: vscode.ExtensionContext) {
                 
                 <body>
                   <h1>${heroData.name_loc}</h1>
-                  <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${heroData.name.replace('npc_dota_hero_', '')}.png" style="max-width: 500px;">
+                  <img
+                    src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${heroData.name.replace('npc_dota_hero_', '')}.png"
+                    style="max-width: 500px;">
                 
                   <h2>背景</h2>
                   <p>${heroData.bio_loc}</p>
@@ -104,9 +124,10 @@ export function registerHeroTreeView(context: vscode.ExtensionContext) {
                   <ul>
                     ${heroAbilities.map((ability: Ability) => `
                     <li>
-                      <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/${ability.name}.png" style="max-width: 80px;">
+                      <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/${ability.name}.png"
+                        style="max-width: 80px;">
                       <h3>${ability.name_loc}</h3>
-                      <p>${ability.desc_loc}</p>
+                      <p>${replaceSpecialValues(ability.desc_loc, ability.special_values)}</p>
                     </li>
                     `).join('')}
                   </ul>
