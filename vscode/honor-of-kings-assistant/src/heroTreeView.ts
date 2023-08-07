@@ -70,6 +70,10 @@ class HeroProvider implements vscode.TreeDataProvider<Hero> {
         }
         return '';
     }
+
+    dispose() {
+        this._onDidChangeTreeData.dispose();
+    }
 }
 
 export function registerHeroTreeView(context: vscode.ExtensionContext) {
@@ -98,6 +102,12 @@ export function registerHeroTreeView(context: vscode.ExtensionContext) {
                     vscode.ViewColumn.One,
                     {}
                 );
+
+                // 注册 Webview 面板关闭事件，释放资源
+                panel.onDidDispose(() => {
+                    // 在面板关闭时执行资源释放操作
+                    heroProvider.dispose();
+                });
 
                 panel.webview.html = strippedHeroDetailsHtml;
             } catch (error) {
