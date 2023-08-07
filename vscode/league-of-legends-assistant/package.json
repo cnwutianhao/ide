@@ -2,7 +2,7 @@
   "name": "league-of-legends-assistant",
   "displayName": "英雄联盟助手",
   "description": "探索英雄联盟世界，尽在英雄联盟助手。",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "TyhooWu",
   "icon": "icons/logo.png",
   "engines": {
