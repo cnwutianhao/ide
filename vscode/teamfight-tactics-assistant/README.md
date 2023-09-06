@@ -5,7 +5,15 @@
 
 云顶之弈助手 - 在 VS Code 上查看英雄、装备、羁绊等信息
 
+[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/TyhooWu.teamfight-tactics-assistant.svg?label=Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.teamfight-tactics-assistant)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/TyhooWu.teamfight-tactics-assistant?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.teamfight-tactics-assistant)
+[![Rating](https://img.shields.io/visual-studio-marketplace/stars/TyhooWu.teamfight-tactics-assistant.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=TyhooWu.teamfight-tactics-assistant)
+
 </div>
+
+## 安装使用
+
+安装插件：[VisualStudio - Marketplace](https://marketplace.visualstudio.com/items?itemName=TyhooWu.teamfight-tactics-assistant)，VS Code 最低版本要求：`^1.80.0`
 
 ## License
 
