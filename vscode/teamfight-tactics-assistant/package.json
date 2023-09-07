@@ -2,7 +2,7 @@
   "name": "teamfight-tactics-assistant",
   "displayName": "云顶之弈助手",
   "description": "探索云顶之弈世界，尽在云顶之弈助手。",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "TyhooWu",
   "icon": "icons/logo.png",
   "engines": {
