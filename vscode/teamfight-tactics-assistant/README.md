@@ -13,7 +13,7 @@
 
 ## 安装使用
 
-安装插件：[VisualStudio - Marketplace](https://marketplace.visualstudio.com/items?itemName=TyhooWu.teamfight-tactics-assistant)，VS Code 最低版本要求：`^1.80.0`
+安装插件：[VisualStudio - Marketplace](https://marketplace.visualstudio.com/items?itemName=TyhooWu.teamfight-tactics-assistant)，VS Code 最低版本要求：`^1.81.0`
 
 ## License
 
