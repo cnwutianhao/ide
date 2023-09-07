@@ -51,10 +51,7 @@ class ChessProvider implements vscode.TreeDataProvider<Chess> {
             const response = await axios.get('https://game.gtimg.cn/images/lol/act/img/tft/js/chess.js');
             const data = response.data;
             if (data && data.data) {
-                this.chesses = data.data.map((chess: any) => ({
-                    ...chess,
-                    iconUrl: `https://game.gtimg.cn/images/lol/act/img/tft/champions/${chess.TFTID}.png`
-                }));
+                this.chesses = data.data.filter((chess: Chess) => chess.races !== "");
                 this._onDidChangeTreeData.fire(undefined);
             }
         } catch (error) {
