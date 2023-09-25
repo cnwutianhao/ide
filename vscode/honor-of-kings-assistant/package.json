@@ -31,11 +31,15 @@
         },
         {
           "id": "hok_asst_items",
-          "name": "装备"
+          "name": "局内道具"
         },
         {
           "id": "hok_asst_runes",
           "name": "铭文"
+        },
+        {
+          "id": "hok_asst_summoners",
+          "name": "召唤师技能"
         }
       ]
     }
