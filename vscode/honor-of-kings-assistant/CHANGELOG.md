@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] - 2023-09-25
+
+### Changed
+
+- “装备”更名为“局内道具”
+
+### Added
+
+- 召唤师技能列表（图片、名称）
+- 召唤师技能详情（名称、图片、介绍、示意图）
+
 ## [1.0.3] - 2023-08-07
 
 ### Fixed
