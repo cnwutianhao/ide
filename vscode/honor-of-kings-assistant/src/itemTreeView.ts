@@ -30,7 +30,7 @@ class ItemProvider implements vscode.TreeDataProvider<Item> {
                 this._onDidChangeTreeData.fire(undefined);
             }
         } catch (error) {
-            vscode.window.showErrorMessage('装备数据加载失败，请稍后再试。');
+            vscode.window.showErrorMessage('局内道具数据加载失败，请稍后再试。');
             console.error(error);
         }
     }
@@ -71,7 +71,7 @@ export function registerItemTreeView(context: vscode.ExtensionContext) {
         vscode.commands.registerCommand('showHokItemDetails', (item: Item) => {
             const panel = vscode.window.createWebviewPanel(
                 'itemDetails',
-                `装备 - ${item.item_name}`,
+                `局内道具 - ${item.item_name}`,
                 vscode.ViewColumn.One,
                 {}
             );
